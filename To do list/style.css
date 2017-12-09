@@ -73,3 +73,13 @@
     position: absolute;
     padding: 10px;
 }
+#tasks
+{
+    border: 2px black;
+    text-align: center;
+    padding: 40px;
+    font-size: 25px;
+    border-spacing: 10px;
+    background: #DDA0DD;
+        
+}
