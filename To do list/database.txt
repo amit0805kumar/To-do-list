@@ -1,0 +1,2 @@
+Table query for Task Table
+CREAT TABLE task(Date date,Task varchar(300),Deadline date);
