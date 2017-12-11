@@ -1,7 +1,6 @@
-
 <html>
 <head>
-<link rel="stylesheet" href="style.css">    
+<link rel="stylesheet" href="ss.css">    
 </head>
 <body>
 <div id="header">
@@ -10,7 +9,7 @@
 </div>
 <br><br>
 <!--Form-->
-<form id="f" method="post" action="index.php">
+<form id="f" method="post" action="task.php">
     
     <div id="ct">
         <img src="pencilicon2.png" width="65" height="55" style="position: absolute;">
@@ -19,16 +18,24 @@
     <input id="tsk" type="text" placeholder="#Enter The Task" name="task">
     <br><br><br>
     <h1 id="dead1">Deadline</h1>
-    <input id="dead" type="text" placeholder="DD/MM/YEAR" name="deadline">
+    <input id="dead" type="text" placeholder="YEAR/MM/DD" name="deadline">
      <br><br><br>
     <input id="cmd"  type="submit" title="Submit">
 </form>
+    <br>
+    <form method="get" action="index.php">
+    <input type="submit" id="cmd2" name="clear" value="Clear All" />
+
+    </form>
     <br>
 <!--Tables-->
     <hr>
     <div id="part"></div>
     <br><br>
+    
+    <br>
 <h1 style="font-size: 30px; margin-left: 15%; color: #8A2BE2;">Task Table</h1> <br>
+    
 </body>
 </html> 
 <?php
@@ -66,9 +73,25 @@ if($result->num_rows>0)
                     '</td>
                     <td>'
                         .$row["Deadline"].
-                   '</td>
+                   '<input type="button" id="cmd3" value="Done" /></td>
                   </tr>';
         }
     }
 echo '</table>';
+
+if($_GET){
+    if(isset($_GET['clear']))
+    {
+        clearall($conn);
+    }
+}
+ 
+    function clearall($conn)
+    {
+
+       $sql="DELETE from task";
+        $conn->query($sql);
+        header( "refresh:0;url=index.php" );
+    }
+ 
 ?>
