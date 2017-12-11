@@ -9,6 +9,7 @@
     width: 100%;
     height: 100px;
     position: relative;
+    box-shadow: -0.5px 5px 6px #696969;
 }
 #heading
 {
@@ -26,9 +27,18 @@
     width: 120px;
     height: 100px;
     padding: 10px;
-
+    animation: log 5s infinite;
 }
-
+@keyframes log
+{
+0% 
+    {
+    }
+100%
+    {
+        transform: rotateY(360deg);
+    }
+}
 #ct
 {
     width: 50px;
@@ -65,7 +75,45 @@
     margin-left: 200px;
     font-size: 20px;
     color: white;
+    transition:box-shadow 0.2s ;
 }
+#cmd:hover
+{
+    box-shadow: 0px 10px 10px #9E9E9E;
+}
+#cmd2:hover
+{
+    box-shadow: 0px 10px 10px #9E9E9E;
+}
+#cmd3:hover
+{
+    box-shadow: 0px 6px 10px #9E9E9E;
+}
+#cmd2
+{
+    background: black;
+    width: 100px;
+    height: 40px;
+    border: none;
+    margin-left: 200px;
+    font-size: 20px;
+    color: white;
+    transition:box-shadow 0.2s;
+
+}
+#cmd3
+{
+     background:#663399;
+   width: 40px;
+    height: 40px;
+     transition:box-shadow 0.2s ;
+    border: none;
+    border-radius: 50%;
+    color: white; 
+    margin-left: 30px;
+}
+
+
 #dead1
 {
     font-size: 30px;
