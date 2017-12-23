@@ -69,7 +69,7 @@
 #cmd
 {
     background: #663399;
-    width: 80px;
+    width: 100px;
     height: 40px;
     border: none;
     margin-left: 200px;
@@ -101,18 +101,43 @@
     transition:box-shadow 0.2s;
 
 }
+
+
+#comp
+{
+    background: #EEEEEE;
+    width: 250px;
+    height: 150px;
+    margin-left: 600px;
+    margin-top: -210px;
+    border: 5px solid purple;
+    padding: 0px;
+    border-radius: 20%;
+    text-align: center;
+}
+#done
+{
+    height: 50px;
+    width: 150px;
+    background: #DCDCDC;
+    border: none;
+    padding: 6px;
+    font-size: 20px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+}
 #cmd3
 {
-     background:#663399;
-   width: 40px;
+    background:#663399;
+   width: 100px;
     height: 40px;
-     transition:box-shadow 0.2s ;
+    transition:box-shadow 0.2s ;
     border: none;
-    border-radius: 50%;
+    border-radius: 20px;
     color: white; 
-    margin-left: 30px;
+    margin:auto;
 }
-
 
 #dead1
 {
@@ -123,10 +148,10 @@
 }
 #tasks
 {
-    padding: 1px;
+    text-align: center;
     font-size: 25px;
-    width: 40%;
-    margin-left: 20px;
+    width: 100%;
+ 
     border-collapse: collapse;
 }
 tr
