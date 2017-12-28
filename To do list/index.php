@@ -1,7 +1,15 @@
 <html>
 <head>
-<link rel="stylesheet" href="stle.css">
+<link rel="stylesheet" href="style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+    function ms1()
+        {
+           document.getElementById("n1").style.visibility="visible";
+            
+        }
+    
+    </script>
 </head>
 <body>
 <div id="header">
@@ -15,13 +23,14 @@
     <div id="ct">
         <img src="pencilicon2.png" width="65" height="55" style="position: absolute;">
     </div>
-    
+    <h1 style="color:red; font-size:15px; margin-left:200px;" id="n1">*please enter the task</h1>
     <input id="tsk" type="text" placeholder="#Enter The Task" name="task">
     <br><br><br>
     <h1 id="dead1">Deadline</h1>
+     <h1 style="color:red; font-size:15px; margin-left:200px;" id="n2">*please enter the deadlin</h1>
     <input id="dead" type="text" placeholder="YEAR/MM/DD" name="deadline">
      <br><br><br>
-    <input id="cmd"  type="submit" title="Submit">
+    <input id="cmd"  type="submit" title="Submit" onclick="ms1()">
 </form>
     <br>
     <!--CLEAR-BUTTON-->
@@ -32,6 +41,7 @@
     
     <div id="comp">
         <form method="post" action="index.php">
+             <h1 style="color:red; font-size:15px;" id="n3">*please enter the task id</h1>
     <input type="text" name="done" id="done" placeholder="TASK ID">
         <br>
         <br>
@@ -51,9 +61,8 @@
     <br>
     
 <h1 style="font-size: 30px; color: #8A2BE2; text-align:center;">Task Table</h1> <br>
-    
-</body>
-</html> 
+  <div>  
+
 <?php
 
 $servername="localhost";
@@ -71,10 +80,10 @@ $sql = "SELECT * FROM task";
 $result = $conn->query($sql);
 echo '<table id="tasks">';
 echo '   <tr>
-        <th>Date</th>
-        <th>Task ID</th>
-        <th>Task</th>
-        <th>Deadline</th> 
+        <th style="width:110px;">Date</th>
+        <th style="width:30px;">Task ID</th>
+        <th style="width:300px;">Task</th>
+        <th style="width:110px;">Deadline</th> 
         </tr>
     ';
 if($result->num_rows>0)
@@ -102,10 +111,7 @@ if($result->num_rows>0)
    
 echo '</table>';
 
-if (empty($_POST["done"])) 
-{
-}
-else
+if (!empty($_POST["done"])) 
 {
         $taskid = $_POST["done"];
         $sql2= "DELETE from task where id=$taskid";
@@ -120,10 +126,6 @@ if($_GET){
     {
         clearall($conn);
     }
-    //if(isset($_GET['done']))
-    {
-     //   del($conn);
-    }
     
 }
  
@@ -135,12 +137,15 @@ if($_GET){
         header( "refresh:0;url=index.php" );
     }
  
-    function del($conn)
-    {
-
-       $sql="DELETE from task";
-        $conn->query($sql);
-        header( "refresh:0;url=index.php" );
-    }
  
 ?>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div style="width:100%; height: 80px; background:linear-gradient(white,#663399); ">
+        <img src="footer.png" style="width:100%;">
+    </div>
+</body>
+</html> 
